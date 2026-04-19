@@ -1,9 +1,9 @@
-- name: 'HACKTIFY: Setup Elevated Privilege HR Lab'
+- name: 'HACKTIFY: Setup elevated privilege Lab'
   id: 2d2cd38e-d732-906b-9bf2-19e1b3c86583
   description: >-
     A corporate HR portal is running on port 5006. The platform manages
     employee records, payslips, and account administration. The security
-    team claims the portal is hardened — access controls are enforced,
+    team claims the portal is hardened, access controls are enforced,
     password resets require OTP verification, and admin interfaces are
     locked down. Your objective is to breach the portal by chaining multiple
     weaknesses together and ultimately access the Chief HR Officer's private
@@ -19,16 +19,13 @@
     - name: sh
       platform: linux
       command: |
-        git clone https://github.com/hacktifytechnologies/elevated-privilege /opt/hacktify/elevated-privilege
-        cd /opt/hacktify/elevated-privilege
-        chmod +x setup.sh
-        bash setup.sh -a
+        git clone https://github.com/hacktifytechnologies/elevated-privilege /opt/hacktify/elevated-privilege && cd /opt/hacktify/elevated-privilege && docker compose up -d --build && echo 'Lab deployment complete'
       code: null
       language: null
       build_target: null
       payloads: []
       uploads: []
-      timeout: 300
+      timeout: 600
       parsers: []
       cleanup: []
       variations: []
