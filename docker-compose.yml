@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  hr-portal:
+    build: .
+    image: hacktifytechnologies/hr-portal:1.0
+    ports:
+      - "5006:5000"
+    restart: unless-stopped
