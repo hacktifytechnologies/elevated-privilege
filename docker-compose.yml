@@ -1,9 +1,7 @@
-version: '3.8'
-
 services:
   hr-portal:
-    build: .
     image: hacktifytechnologies/hr-portal:1.0
+    container_name: hr-portal
     ports:
       - "5006:5000"
     restart: unless-stopped
